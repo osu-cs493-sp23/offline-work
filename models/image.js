@@ -46,7 +46,7 @@ exports.getImageDownloadStreamByFilename = function (filename) {
 }
 
 exports.getDownloadStreamById = function (id) {
-    const db = getDBReference()
+    const db = getDbReference()
     const bucket = new GridFSBucket(db, { bucketName: 'images' })
     if (!ObjectId.isValid(id)) {
         return null
@@ -56,7 +56,7 @@ exports.getDownloadStreamById = function (id) {
 }
 
 exports.updateImageTagsById = async function (id, tags) {
-    const db = getDBReference()
+    const db = getDbReference()
     const collection = db.collection('images.files')
     if (!ObjectId.isValid(id)) {
         return null
